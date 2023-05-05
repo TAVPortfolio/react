@@ -7,11 +7,11 @@ function Profile(props) {
   return (
     <div className="profile">
       <h1 className="profile__name">
-        {`${props.user.firstName} ${props.user.lastName}`}
+        {`${props.userData.firstName} ${props.userData.lastName}`}
       </h1>
       <div className="profile__birth">{`Was born ${formatDate(
-        props.user.birthDate
-      )} in ${props.user.birthPlace}`}</div>
+        props.userData.birthDate
+      )} in ${props.userData.birthPlace}`}</div>
     </div>
   );
 }
