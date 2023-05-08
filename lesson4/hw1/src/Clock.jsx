@@ -13,11 +13,12 @@ const getTimeWithOffset = (offset) => {
 class Clock extends Component {
   constructor(props) {
     super(props);
-    this.localTime = moment(getTimeWithOffset(props.offset)).format(
+    this.locationTime = moment(getTimeWithOffset(props.offset)).format(
       'HH:mm:ss A'
     );
+
     this.state = {
-      time: props.localTime,
+      time: this.locationTime,
     };
 
     setInterval(() => {

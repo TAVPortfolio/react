@@ -1,12 +1,12 @@
 import React from 'react';
-import Clock from './Clock';
+import Clock from './Clock.jsx';
 
 const App = () => {
   return (
     <>
-      <Clock location="New York" offset={-5} />
-      <Clock location="Kyiv" offset={2} />
-      <Clock location="London" offset={0} />
+      <Clock offset={0} location="London" />
+      <Clock offset={2} location="Kyiv" />
+      <Clock offset={-5} location="New York" />
     </>
   );
 };
