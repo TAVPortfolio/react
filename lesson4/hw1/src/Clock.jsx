@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './clock.scss';
 import moment from 'moment';
 
-// put your code here
-
 const getTimeWithOffset = (offset) => {
   const currentTime = new Date();
   const utcOffset = currentTime.getTimezoneOffset() / 60;
@@ -38,6 +36,5 @@ class Clock extends Component {
     );
   }
 }
-// put your code here
 
 export default Clock;
