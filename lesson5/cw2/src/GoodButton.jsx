@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+// work
 class GoodButton extends Component {
   handleClick(e) {
     console.log();
