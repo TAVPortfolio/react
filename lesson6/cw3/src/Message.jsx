@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Info = ({ text }) => {
+const Message = ({ text }) => {
   if (!text) {
     return null;
   }
   return <div className="message">{text}</div>;
 };
 
-export default Info;
+export default Message;
