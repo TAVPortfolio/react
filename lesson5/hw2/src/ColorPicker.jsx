@@ -5,31 +5,42 @@ const AQUA = 'Aqua';
 const BISQUE = 'Bisque';
 
 class ColorPicker extends Component {
-  setNameColor = (nameColor) => {
-    document.querySelector('.picker__title').textContent = nameColor;
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: '',
+    };
+  }
+  setColor = (color) => {
+    this.setState({
+      counter: color,
+    });
   };
-  mouseLeave = () => {
-    return (document.querySelector('.picker__title').textContent = '');
+
+  reSetColor = (color) => {
+    this.setState({
+      counter: '',
+    });
   };
 
   render() {
     return (
       <div>
-        <div className="picker__title"></div>
+        <div className="picker__title">{this.state.counter}</div>
         <div>
           <button
-            onMouseEnter={() => this.setNameColor(CORAL)}
-            onMouseLeave={this.mouseLeave}
+            onMouseOver={() => this.setColor('Coral')}
+            onMouseOut={() => this.setColor('')}
             className="picker__button picker__button_coral"
           ></button>
           <button
-            onMouseEnter={() => this.setNameColor(AQUA)}
-            onMouseLeave={this.mouseLeave}
+            onMouseEnter={() => this.setColor('Aqua')}
+            onMouseOut={() => this.setColor('')}
             className="picker__button picker__button_aqua"
           ></button>
           <button
-            onMouseEnter={() => this.setNameColor(BISQUE)}
-            onMouseLeave={this.mouseLeave}
+            onMouseEnter={() => this.setColor('Bisque')}
+            onMouseOut={() => this.setColor('')}
             className="picker__button picker__button_bisque"
           ></button>
         </div>
