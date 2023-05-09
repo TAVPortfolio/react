@@ -22,10 +22,10 @@ class Page extends Component {
         <Info text={this.state.text} />
         <div className="actions">
           <button className="btn" onClick={() => this.setText(text1)}>
-            Text 1
+            IPhone 13
           </button>
           <button className="btn" onClick={() => this.setText(text2)}>
-            Text 2
+            IPhone 13 Pro
           </button>
           <button className="btn" onClick={() => this.setText('')}>
             Clear
