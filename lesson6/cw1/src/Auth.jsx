@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
-import Greeting from './Greeting';
+import Greeting from './Greeting.jsx';
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
 
 class Auth extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       isLoggedIn: false,
     };
   }
-
-  handelLogin = () => {
+  handleLogin = () => {
     this.setState({
       isLoggedIn: true,
     });
   };
-  handelLogout = () => {
+  handleLogout = () => {
     this.setState({
       isLoggedIn: false,
     });
   };
+
   render() {
     let button = this.state.isLoggedIn ? (
-      <button className="logout btn" onClick={this.handelLogout}>
-        Logout
-      </button>
+      <Logout onLogout={this.handleLogout} />
     ) : (
-      <button className="login btn" onClick={this.handelLogin}>
-        Login
-      </button>
+      <Login onLogin={this.handleLogin} />
     );
 
     return (
