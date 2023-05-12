@@ -5,6 +5,6 @@ import NumbersList from './NumbersList';
 
 const rootElement = document.querySelector('#root');
 
-const num = [1, 2, 3, 4, 5, 6];
+const numbers = [1, 2, 3, 4, 5, 6, 7];
 
-ReactDOM.render(<NumbersList num={num} />, rootElement);
+ReactDOM.render(<NumbersList numbers={numbers} />, rootElement);
