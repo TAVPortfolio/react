@@ -1,7 +1,7 @@
 import React from 'react';
 import Transaction from './Transaction';
 
-const TransactionList = ({ transactions }) => {
+const TransactionsList = ({ transactions }) => {
   return (
     <div>
       <ul className="transactions">
@@ -13,4 +13,4 @@ const TransactionList = ({ transactions }) => {
   );
 };
 
-export default TransactionList;
+export default TransactionsList;
