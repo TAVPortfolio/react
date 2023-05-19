@@ -1,39 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import UserPropfile from './UserProfile.jsx';
 import UserMenu from './UserMenu.jsx';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userData: null,
-    };
-  }
-  componentDidMount() {
-    this.fetchUserData(this.props.userId);
-  }
+const App = ({ userId }) => {
+  const [userData, setUserData] = useState(null);
 
-  fetchUserData = (userId) => {
+  const fetchUserData = useCallback(async () => {
     const userUrl = `https://api.github.com/users/${userId}`;
-    fetch(userUrl)
-      .then((response) => response.json())
-      .then((userData) =>
-        this.setState({
-          userData,
-        })
-      );
-  };
-  render() {
-    return (
-      <div className="page">
-        <header className="header">
-          <UserMenu userData={this.state.userData} />
-        </header>
-        <div className="user">
-          <UserPropfile userData={this.state.userData} />
-        </div>
+    const response = await fetch(userUrl);
+    const userData = await response.json();
+    setUserData(userData);
+  }, [userId]);
+
+  useEffect(() => {
+    fetchUserData();
+  }, [fetchUserData]);
+
+  return (
+    <div className="page">
+      <header className="header">
+        <UserMenu userData={userData} />
+      </header>
+      <div className="user">
+        <UserPropfile userData={userData} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 export default App;
