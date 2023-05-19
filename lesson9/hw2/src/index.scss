@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  &-row {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    margin: 1px;
+  }
+}
+
+.square {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 1px;
+  width: 3rem;
+  height: 3rem;
+  padding: 2px;
+}
+
+.game {
+  display: flex;
+  &-board {
+    margin-right: 20px;
+  }
+}
