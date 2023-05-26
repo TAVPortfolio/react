@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 class Expand extends Component {
   constructor(props) {
@@ -22,9 +20,9 @@ class Expand extends Component {
           <span className="expand__title">{this.props.title}</span>
           <button className="expand__toggle-btn" onClick={this.toggleBtn}>
             {this.state.isOpen ? (
-              <FontAwesomeIcon icon={faChevronUp} />
+              <i class="fa-solid fa-chevron-up" />
             ) : (
-              <FontAwesomeIcon icon={faChevronDown} />
+              <i class="fa-solid fa-chevron-down" />
             )}
           </button>
         </div>
